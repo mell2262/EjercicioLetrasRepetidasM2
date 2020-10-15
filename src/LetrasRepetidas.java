@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
 
 public class LetrasRepetidas {
@@ -7,31 +7,39 @@ public class LetrasRepetidas {
 	public static void main(String[] args) {
 		/* El ejercicio consiste en mostrar por consola cuántas veces aparece cada letra 
 		 * de tu nombre y apellidos con diferentes variantes (fases).
-		FASE 3
-		 Almacenar en un Map tanto las letras de la lista como el número de veces 
-		que aparecen.
+		FASE 4
+		 Crear otra lista con tu apellido donde cada posición corresponda a una letra.
+
+		 Combinar las dos listas en una sola. Además, añade una posición con un espacio vacío entre la primera y la 
+		segunda. Es decir, partimos de la lista name y surname y al terminar la ejecución sólo tendremos una que se 
+		llamará fullname.
+
+		FullName: [‘N’, ‘A’, ‘M’, ‘E’, ‘ ‘, ‘S’, ‘U’, ‘R‘, ‘N’, ‘A’, ‘M’, ‘E’]
 
 		 */
-		List<Character> nombre = new ArrayList<Character>();
-		HashMap<Character, Integer> repetLetras= new HashMap<Character, Integer>();
+		List<Character> name = new ArrayList<Character>();
+		List<Character> surName = 	Arrays.asList('G','O','M','E','Z');	
+		List<Character> fullName= new ArrayList<Character>();
 			
-		nombre.add('M');
-		nombre.add('E');
-		nombre.add('L');
-		nombre.add('I');
-		nombre.add('S');
-		nombre.add('E');
+		name.add('M');
+		name.add('E');
+		name.add('L');
+		name.add('I');
+		name.add('S');
+		name.add('A');
+
 		
-		
-		for (int i=0; i<nombre.size();i++) {
-			
-			if (repetLetras.get(nombre.get(i))==null) repetLetras.put(nombre.get(i), 1);
-			else {
-				Integer a=repetLetras.get(nombre.get(i));
-				repetLetras.replace(nombre.get(i), a+1);
-			}
+		for (int i=0; i<name.size();i++) {
+			fullName.add(name.get(i));
 		}
-		System.out.println(repetLetras);
+		
+		fullName.add(' ');
+		
+		for (int i=0; i<surName.size(); i++) {
+			fullName.add(surName.get(i));	
+		}
+		
+		System.out.println(fullName);
 		
 	}
 }
